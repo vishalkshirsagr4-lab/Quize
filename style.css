@@ -227,7 +227,7 @@
     }
 }
 .hint {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: rgb(51, 51, 51,0.4);
     position: fixed;
@@ -277,3 +277,4 @@
     color: blue;
 
 }
+

@@ -46,7 +46,7 @@ import { alpha } from "./qns.js";
                     document.querySelector(".cole").classList.remove("right");
                     
                   },1000);
-                  setTimeout(()=>{wow.pause();},1500);
+                  setTimeout(()=>{wow.pause();},1900);
                   localStorage.setItem("score", JSON.stringify(score));
             } else {
 
@@ -144,3 +144,4 @@ function qns(){
         document.querySelector(".hint").style.display="none";
 
   });
+

@@ -28,6 +28,9 @@ import { alpha } from "./qns.js";
             console.log(textanswer);
             console.log(Win(textanswer));
             if(Win(textanswer)) {
+              let wow = document.getElementById("WowSound");
+                wow.currentTime = 0;  
+                wow.play();           
                  score.index++;
                  boxhtml='';
                  html='';
@@ -41,17 +44,36 @@ import { alpha } from "./qns.js";
                  setTimeout(()=>{ 
                     document.querySelector(".qns").classList.remove("left");
                     document.querySelector(".cole").classList.remove("right");
+                    
                   },1000);
+                  setTimeout(()=>{wow.pause();},1500);
                   localStorage.setItem("score", JSON.stringify(score));
             } else {
-                document.querySelector(".answers").classList.add("error");
-                setTimeout(()=>{
-                   ans.forEach((ans)=>{ans.classList.remove("add-color")});
-                   color = 0;
+
+                 let sound = document.getElementById("errorSound");
+                 sound.currentTime = 0;   
+                 sound.play();           
+
+                 document.querySelector(".answers").classList.add("error");
+
+                  setTimeout(()=>{
+                      ans.forEach((ans)=>{
+                      ans.classList.remove("add-color")
+                  });
+                color = 0;
                 },600);
-               setTimeout(()=>{document.querySelector(".answers").classList.remove("error"); ans.forEach((ans)=>{ ans.textContent=''; }) },800);
-                textanswer='';
-           }
+
+                 setTimeout(()=>{
+                      document.querySelector(".answers").classList.remove("error");
+                      ans.forEach((ans)=>{
+                           ans.textContent = '';
+                      });
+
+                  sound.pause();       
+              },800);
+
+               textanswer = '';
+            }
         } 
 
       });
@@ -120,4 +142,5 @@ function qns(){
 
   document.querySelector(".close").addEventListener("click",()=>{
         document.querySelector(".hint").style.display="none";
+
   });

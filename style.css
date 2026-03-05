@@ -215,7 +215,7 @@
         gap: 5rem;
     }
     .navbar {
-        grid-column:1 / span 2;
+        grid-column: span 2;
     }
 }
 
@@ -296,3 +296,4 @@
 .close:hover {
     color: blue;
 }
+

@@ -166,7 +166,7 @@
     .grid-container {
         padding: 1rem;
         width: auto;
-        height: 85vh;
+        height: 90vh;
         justify-content: space-evenly;
         place-items: center;
     }
@@ -176,7 +176,7 @@
        grid-template-columns: repeat(4, auto);
        grid-template-rows: repeat(3,auto);
        gap: 15px;
-       width: 90%;
+       width: 80%;
   }
 
     .cole div {
@@ -288,4 +288,3 @@
 .close:hover {
     color: blue;
 }
-
